@@ -10,10 +10,4 @@ cd () {
     fi
 }
 
-if [ -f $VIRTUAL_ENV/.modules ]
-then
-    for module in `cat $VIRTUAL_ENV/.modules`
-    do
-        module load $module
-    done
-fi
+

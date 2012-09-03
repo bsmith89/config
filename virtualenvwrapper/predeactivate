@@ -1,0 +1,10 @@
+#!/bin/bash
+# This hook is run before every virtualenv is deactivated.
+
+if [ -f $VIRTUAL_ENV/.modules ]
+then
+    for module in `cat $VIRTUAL_ENV/.modules`
+    do
+        module unload $module
+    done
+fi

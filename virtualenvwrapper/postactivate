@@ -1,0 +1,19 @@
+#!/bin/bash
+# This hook is run after every virtualenv is activated.
+
+cd () {
+    if (( $# == 0 )) && [[ -e $VIRTUAL_ENV/$VIRTUALENVWRAPPER_PROJECT_FILENAME ]]
+    then
+        cdproject
+        else
+        builtin cd "$@"
+    fi
+}
+
+if [ -f $VIRTUAL_ENV/.modules ]
+then
+    for module in `cat $VIRTUAL_ENV/.modules`
+    do
+        module load $module
+    done
+fi

@@ -1,17 +1,12 @@
-# by default, print directories as 'dir/', all hidden directories, and
-# colorize the output.
-alias ls="ls -Ap --color=auto"
-alias amd09="ssh dev-amd09"
-alias showqu="showq -u $USER"
+export PYTHONPATH=$HOME/.local/lib/python2.7/site-packages:/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+
+# As recommended by homebrew
+export PATH=/usr/local/bin:$PATH
 
 #These lines are required for virtualenvwrapper to work correctly 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
-if [ $HOSTNAME == 'dev-amd09' ]
-then
-    source $HOME/.local/bin/virtualenvwrapper_lazy.sh
-fi
-
+source $HOME/.local/bin/virtualenvwrapper.sh
 # and these make virtualenv work the same way, even if not using
 # virtualenvwrapper
 export PIP_VIRTUALENV_BASE=$WORKON_HOME

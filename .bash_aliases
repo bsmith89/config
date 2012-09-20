@@ -1,14 +1,21 @@
 # Some user added aliases in order of addition.
 # If something breaks consider removing the most recent additions.
+alias ls="ls -Ap -G" # by default, print directories as 'dir/', all hidden directories, and colorize the output.
+# alias ls='ls --color=auto'
+alias eisen="cd $HOME/Projects/eisen/"
+
 
 # SSH
 hpcc="smithby1@hpcc.msu.edu"
-alias hpcc-ssh="ssh -X $hpcc"
+alias hpcc-ssh="ssh $hpcc"
 lyorn="smithby1@lyorn.idyll.org"
-alias lyorn-ssh="ssh -X $lyorn"
+alias lyorn-ssh="ssh $lyorn"
 z61t="bjsmith@smithby1-4.user.msu.edu"
-alias z61t-ssh="ssh -X $z61t"
-
+alias z61t-ssh="ssh $z61t"
+alias ssx="ssh -C -X -c blowfish"
+alias hpcc-sshx="ssx $hpcc"
+alias lyorn-sshx="ssx $lyorn"
+alias z61t-sshx="ssx $z61t"
 
 # What else?
 # Safe copy, mv, and rm

@@ -6,7 +6,9 @@ export PATH=/usr/local/bin:$PATH
 #These lines are required for virtualenvwrapper to work correctly 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
-source $HOME/.local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_SCRIPT=$HOME/.local/bin/virtualenvwrapper.sh
+source $HOME/.local/bin/virtualenvwrapper_lazy.sh
+
 # and these make virtualenv work the same way, even if not using
 # virtualenvwrapper
 export PIP_VIRTUALENV_BASE=$WORKON_HOME

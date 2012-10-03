@@ -1,3 +1,10 @@
 This repository is a set of customized configuration files which I
 have found to be useful on a variety of systems.  I have a separate
 branch for each system, currently just OSX and the HPCC at MSU.
+
+Files in the virtualenvwrapper/ directory are hooks which should be placed in a
+.virtualenvwrapper/ directory in the $HOME directory in order to be run by
+virtualenvwrapper when starting/stopping/etc. a virtualenv.
+
+ipython_notebook_config.py should be placed in a .ipython/ directory in the
+$HOME directory to change the default setting for ipython notebook.

@@ -29,3 +29,5 @@ alias ll="ls -alFh"
 alias nmsq="grep -c '^>'"
 alias now="date +%r%n%a%t%D"
 alias calc='bc -l <<<'
+
+alias notebook='ipython notebook --pylab=inline'

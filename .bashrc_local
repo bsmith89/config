@@ -3,6 +3,7 @@
 alias ls="ls -Ap --color=auto"
 alias amd09="ssh dev-amd09"
 alias showqu="showq -u $USER"
+alias scratch="cd /mnt/scratch/smithby1"
 
 #These lines are required for virtualenvwrapper to work correctly 
 export WORKON_HOME=$HOME/.virtualenvs
@@ -16,3 +17,5 @@ fi
 # virtualenvwrapper
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
+
+dropbox start 2>&1 1>/dev/null

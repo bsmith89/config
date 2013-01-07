@@ -8,10 +8,7 @@ alias scratch="cd /mnt/scratch/smithby1"
 # These lines are required for virtualenvwrapper to work correctly 
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
-if [ $HOSTNAME == 'dev-amd09' ]
-then
-    source $HOME/.local/bin/virtualenvwrapper_lazy.sh
-fi
+source $HOME/.local/bin/virtualenvwrapper_lazy.sh
 
 # and these make virtualenv work the same way, even if not using
 # virtualenvwrapper

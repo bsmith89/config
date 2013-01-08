@@ -17,5 +17,19 @@ export PIP_RESPECT_VIRTUALENV=true
 
 #dropbox start 2>&1 1>/dev/null
 
-module load powertools
+# Load a list of modules on the HPCC
+
+function loadall {
+    if [ -f $1 ]
+    then
+        module load `cat $1`
+    fi
+}
+
+# Load additional default modules
+additional_default_modules="powertools"
+loadall <<<$additional_default_modules
+
+# Make the list of powertools more accessable
 alias powertools='powertools | less'
+

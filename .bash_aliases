@@ -22,3 +22,17 @@ alias ll="ls -alFh"
 alias nmsq="grep -c '^>'"
 alias now="date +%r%n%a%t%D"
 alias calc='bc -l <<<'
+
+function commsrunning {
+    ps -u $USER -o comm=
+}
+
+function name2proc {
+    echo `ps -u $USER | grep $1 | awk '{print($1)}'`
+}
+complete -W "`commsrunning`" name2proc
+
+function namekill {
+    kill `name2proc $1`
+}
+complete -W "`commsrunning`" namekill

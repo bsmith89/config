@@ -1,21 +1,14 @@
 # Some user added aliases in order of addition.
 # If something breaks consider removing the most recent additions.
-alias ls="ls -Ap -G" # by default, print directories as 'dir/', all hidden directories, and colorize the output.
-# alias ls='ls --color=auto'
-alias eisen="cd $HOME/Projects/eisen/"
-
 
 # SSH
 hpcc="smithby1@hpcc.msu.edu"
-alias hpcc-ssh="ssh $hpcc"
+alias hpcc-ssh="ssh -X $hpcc"
 lyorn="smithby1@lyorn.idyll.org"
-alias lyorn-ssh="ssh $lyorn"
+alias lyorn-ssh="ssh -X $lyorn"
 z61t="bjsmith@smithby1-4.user.msu.edu"
-alias z61t-ssh="ssh $z61t"
-alias ssx="ssh -C -X -c blowfish"
-alias hpcc-sshx="ssx $hpcc"
-alias lyorn-sshx="ssx $lyorn"
-alias z61t-sshx="ssx $z61t"
+alias z61t-ssh="ssh -X $z61t"
+
 
 # What else?
 # Safe copy, mv, and rm
@@ -30,4 +23,16 @@ alias nmsq="grep -c '^>'"
 alias now="date +%r%n%a%t%D"
 alias calc='bc -l <<<'
 
-alias notebook='ipython notebook --pylab=inline'
+function commsrunning {
+    ps -u $USER -o comm=
+}
+
+function name2proc {
+    echo `ps -u $USER | grep $1 | awk '{print($1)}'`
+}
+complete -W "`commsrunning`" name2proc
+
+function namekill {
+    kill `name2proc $1`
+}
+complete -W "`commsrunning`" namekill

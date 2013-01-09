@@ -28,7 +28,7 @@ function loadall {
 # Load additional default modules
 # too add modules to the list inset them into the variable "additional_default_modules"
 additional_default_modules="powertools"
-loadall 2>1 1>/dev/null <<<$additional_default_modules
+loadall 2>&1 1>/dev/null <<<$additional_default_modules
 
 # Make the list of powertools more accessable
 alias powertools='powertools | less'

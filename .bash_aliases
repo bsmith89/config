@@ -1,13 +1,20 @@
 # Some user added aliases in order of addition.
 # If something breaks consider removing the most recent additions.
 
+# ls shows hidden directories and colorizes the output
+alias ls="ls -Ap -G"
+
 # SSH
 hpcc="smithby1@hpcc.msu.edu"
-alias hpcc-ssh="ssh -X $hpcc"
+alias hpcc-ssh="ssh $hpcc"
 lyorn="smithby1@lyorn.idyll.org"
-alias lyorn-ssh="ssh -X $lyorn"
+alias lyorn-ssh="ssh $lyorn"
 z61t="bjsmith@smithby1-4.user.msu.edu"
-alias z61t-ssh="ssh -X $z61t"
+alias z61t-ssh="ssh $z61t"
+alias ssx="ssh -C -X -c blowfish"
+alias hpcc-sshx="ssx $hpcc"
+alias lyorn-sshx="ssx $lyorn"
+alias z61t-sshx="ssx $z61t"
 
 
 # What else?
@@ -22,6 +29,8 @@ alias ll="ls -alFh"
 alias nmsq="grep -c '^>'"
 alias now="date +%r%n%a%t%D"
 alias calc='bc -l <<<'
+
+alias notebook='ipython notebook --pylab=inline'
 
 function commsrunning {
     ps -u $USER -o comm=

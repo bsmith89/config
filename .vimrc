@@ -24,4 +24,4 @@ set mouse=a
 ""match OverPyDocLength /\%>72v/
 
 set dictionary+=/usr/share/dict/words 
-set thesaurus+=/mnt/home/smithby1/.local/share/mthesaur.txt
+set thesaurus+=/Users/bjsmith/.local/share/mthesaur.txt

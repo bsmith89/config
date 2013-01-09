@@ -1,8 +1,7 @@
 # by default, print directories as 'dir/', all hidden directories, and
 # colorize the output.
 alias ls="ls -Ap --color=auto"
-alias amd09="ssh dev-amd09"
-alias showqu="showq -u $USER"
+alias amd="ssh dev-amd09"
 alias scratch="cd /mnt/scratch/smithby1"
 
 # These lines are required for virtualenvwrapper to work correctly 
@@ -27,8 +26,9 @@ function loadall {
 }
 
 # Load additional default modules
+# too add modules to the list inset them into the variable "additional_default_modules"
 additional_default_modules="powertools"
-loadall <<<$additional_default_modules
+loadall 2>1 1>/dev/null <<<$additional_default_modules
 
 # Make the list of powertools more accessable
 alias powertools='powertools | less'

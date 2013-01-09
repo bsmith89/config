@@ -22,3 +22,6 @@ set mouse=a
 """ character limit
 ""highlight OverPyDocLength ctermbg=darkred
 ""match OverPyDocLength /\%>72v/
+
+set dictionary+=/usr/share/dict/words 
+set thesaurus+=/mnt/home/smithby1/.local/share/mthesaur.txt

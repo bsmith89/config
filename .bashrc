@@ -105,9 +105,12 @@ fi
 # Additional PATH variables:
 #+ Careful! Keep them small and univerally compatible.
 #export PATH="$PATH:<whatever-you-want>"
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Local Bash settings:
 if [ -f $HOME/.bashrc_local ]; then
     . $HOME/.bashrc_local
 fi
+
+# Set it so that the 'v' shortcut uses vim instead of vi
+export EDITOR=vim
